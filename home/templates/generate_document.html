@@ -1,4 +1,3 @@
-# templates/generate_document.html
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,7 +20,7 @@
             max-width: 500px;
             margin: auto;
         }
-        input, button {
+        input, select, button {
             width: 100%;
             padding: 10px;
             margin: 10px 0;
@@ -40,7 +39,7 @@
     </style>
 </head>
 <body>
-    <h1>Generate Your Will Document</h1>
+    <h1>Generate Your {{ doc_type|title }} Document</h1>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
