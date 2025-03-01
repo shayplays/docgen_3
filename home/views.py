@@ -1,16 +1,20 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .forms import WillForm, LicenseForm
+from .forms import WillForm, LicenseForm, LoanAgreementForm, DeedOfHypothecationForm
 import docx
 
 TEMPLATES = {
     'will': 'Simple-will-LawRato3.docx',
-    'license': 'Licence-to-use-Copyright-LawRato2.docx'
+    'license': 'Licence-to-use-Copyright-LawRato2.docx',
+    'loan_agreement': 'Loan-Agreement-LawRato3.docx',
+    'deed_of_hypothecation': 'Deed-of-Hypothecation-HP-LawRato4.docx'
 }
 
 FORMS = {
     'will': WillForm,
-    'license': LicenseForm
+    'license': LicenseForm,
+    'loan_agreement': LoanAgreementForm,
+    'deed_of_hypothecation' : DeedOfHypothecationForm
 }
 
 def select_document(request):
