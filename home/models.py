@@ -6,7 +6,13 @@ class LegalDocument(models.Model):
         ('license', 'License Agreement'),
         ('loan_agreement', 'Loan Agreement'),
         ('deed_of_hypothecation', 'Deed Of Hypothecation'),
-
+        ('contract_bond', 'Contract Bond'),
+        ('simple_money_bond', 'Simple Money Bond'),
+        ('employee_bond_for_non_compete', 'Employee Bond for Non-Compete'),
+        ('simple_mortgage_deed', 'Simple Mortgage Deed'),
+        ('rent_agreement', 'Rent Agreement (For a term of years)'),
+        ('sale_agreement', 'Agreement For Sale'),
+        
     ]
     document_type = models.CharField(max_length=255, choices=DOCUMENT_CHOICES)
     name = models.CharField(max_length=255)
@@ -59,6 +65,112 @@ class LegalDocument(models.Model):
     number_of_missed_installments = models.IntegerField(blank=True, null=True)
     arbitration_venue = models.CharField(max_length=255, blank=True, null=True)
 
+    #bond and bail bond
+    accused_name = models.CharField(max_length=255, blank=True, null=True)
+    accused_address = models.CharField(max_length=255, blank=True, null=True)
+    name_of_issuing_court = models.CharField(max_length=255, blank=True, null=True)
+    offense = models.CharField(max_length=255, blank=True, null=True)
+    name_of_appearing_court = models.CharField(max_length=255, blank=True, null=True)
+    appearing_day = models.IntegerField(blank=True, null=True)
+    appearing_month = models.CharField(max_length=255, blank=True, null=True)
+    appearing_year = models.IntegerField(blank=True, null=True)
+    bail_amount = models.FloatField(blank=True, null=True)
+    present_day = models.IntegerField(blank=True, null=True)
+    present_month = models.CharField(max_length=255, blank=True, null=True)
+    present_year = models.IntegerField(blank=True, null=True)
+    surety_name = models.CharField(max_length=255, blank=True, null=True)
+    surety_address = models.CharField(max_length=255, blank=True, null=True)
+    name_of_surety_court = models.CharField(max_length=255, blank=True, null=True)
+    name_of_trial_court = models.CharField(max_length=255, blank=True, null=True)
+    trial_day = models.IntegerField(blank=True, null=True)
+    trial_month = models.CharField(max_length=255, blank=True, null=True)
+    trial_year = models.IntegerField(blank=True, null=True)
+    surety_bail_amount = models.IntegerField(blank=True, null=True)
 
+    #contract bond
+    obligor_name = models.CharField(max_length=255, blank=True, null=True)
+    obligor_address = models.CharField(max_length=255, blank=True, null=True)
+    obligee_name = models.CharField(max_length=255, blank=True, null=True)
+    sum_to_pay = models.IntegerField(blank=True, null=True)
+    plot_address = models.CharField(max_length=255, blank=True, null=True)
+    bond_amount = models.IntegerField(blank=True, null=True)
+    present_day = models.IntegerField(blank=True, null=True)
+    present_month = models.CharField(max_length=255, blank=True, null=True)
+    present_year = models.IntegerField(blank=True,null=True)
 
+    #simplemoneybond
+    lender_father_name = models.CharField(max_length=255, blank=True, null=True)
+    lender_address = models.CharField(max_length=255, blank=True, null=True)
+    sum_in_words = models.IntegerField(blank=True, null=True)
+    object_of_purchase = models.CharField(max_length=255, blank=True, null=True)
+    repayment_amount = models.IntegerField(blank=True, null=True)
+    interest_percent = models.IntegerField(blank=True, null=True)
 
+    #employee bond for non-compete
+    employee_name = models.CharField(max_length=255, blank=True, null=True)
+    employee_address = models.CharField(max_length=255, blank=True, null=True)
+    employee_qualification = models.CharField(max_length=255, blank=True, null=True)
+    employer_name = models.CharField(max_length=255, blank=True, null=True)
+    compensation_amount = models.FloatField(blank=True, null=True)
+    type_of_product = models.CharField(max_length=255, blank=True, null=True)
+    specific_product = models.CharField(max_length=255, blank=True, null=True)
+    trade_secret_details = models.CharField(max_length=255, blank=True, null=True)
+    penalty_amount = models.FloatField(blank=True, null=True)
+    restricted_location = models.CharField(max_length=255, blank=True, null=True)
+    non_compete_duration = models.CharField(max_length=255, blank=True, null=True)
+
+    #simple mortgage deed
+    place_of_execution = models.CharField(max_length=255, blank=True, null=True)
+    mortgagor_name = models.CharField(max_length=255, blank=True, null=True)
+    mortgagor_father_name = models.CharField(max_length=255, blank=True, null=True)
+    mortgagor_address = models.CharField(max_length=255, blank=True, null=True)
+    mortgagee_name = models.CharField(max_length=255, blank=True, null=True)
+    mortgagee_father_name = models.CharField(max_length=255, blank=True, null=True)
+    mortgagee_address = models.CharField(max_length=255, blank=True, null=True)
+    property_number = models.CharField(max_length=255, blank=True, null=True)
+    property_location = models.CharField(max_length=255, blank=True, null=True)
+    loan_amount = models.FloatField(blank=True, null=True)
+    consideration_amount = models.FloatField(blank=True, null=True)
+    payment_due_date = models.CharField(max_length=255, blank=True, null=True)
+    repayment_amount = models.FloatField(blank=True, null=True)
+    interest_percent = models.IntegerField(blank=True, null=True)
+    first_installment_date = models.CharField(max_length=255, blank=True, null=True)
+    subsequent_installment_payment_day = models.IntegerField(blank=True, null=True)
+    mortgage_property_number = models.IntegerField(blank=True, null=True)
+    mortgage_property_location = models.CharField(max_length=255, blank=True, null=True)
+
+    #rentagreement
+    place_of_execution = models.CharField(max_length=255, blank=True, null=True)
+    lessor_name = models.CharField(max_length=255, blank=True, null=True)
+    lessor_address = models.CharField(max_length=255, blank=True, null=True)
+    lessee_name = models.CharField(max_length=255, blank=True, null=True)
+    lessee_address = models.CharField(max_length=255, blank=True, null=True)
+    lease_duration_years = models.IntegerField(blank=True, null=True)
+    lease_start_date = models.CharField(max_length=255, blank=True, null=True)
+    monthly_rent_amount = models.FloatField(blank=True, null=True)
+    first_rent_payment_date = models.CharField(max_length=255, blank=True, null=True)
+    interest_percent_on_late_payment = models.FloatField(blank=True, null=True)
+    municipal_and_other_taxes_amount = models.FloatField(blank=True, null=True)
+    number_of_months_for_default = models.IntegerField(blank=True, null=True)
+    number_of_months_for_dispute_resolution = models.IntegerField(blank=True, null=True)
+    witness_1_name = models.CharField(max_length=255, blank=True, null=True)
+    witness_2_name = models.CharField(max_length=255, blank=True, null=True)
+
+    #saleagreement
+    seller_name = models.CharField(max_length=255, blank=True, null=True)
+    seller_father_name = models.CharField(max_length=255, blank=True, null=True)
+    seller_address = models.CharField(max_length=255, blank=True, null=True)
+    purchaser_name = models.CharField(max_length=255, blank=True, null=True)
+    purchaser_father_name = models.CharField(max_length=255, blank=True, null=True)
+    purchaser_age = models.IntegerField(blank=True, null=True)
+    purchaser_address = models.CharField(max_length=255, blank=True, null=True)
+    previous_owner_name = models.CharField(max_length=255, blank=True, null=True)
+    date_of_previous_sale = models.CharField(max_length=255, blank=True, null=True)
+    purpose_of_sale = models.CharField(max_length=255, blank=True, null=True)
+    sale_consideration_amount = models.FloatField(blank=True, null=True)
+    advance_payment_amount = models.FloatField(blank=True, null=True)
+    cheque_number = models.IntegerField(blank=True, null=True)
+    date_of_advance_payment = models.CharField(max_length=255, blank=True, null=True)
+    balance_payment_amount = models.FloatField(blank=True, null=True)
+    
+    
