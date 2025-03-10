@@ -56,3 +56,42 @@ class SaleAgreementForm(forms.ModelForm):
         model = LegalDocument
         fields = ['date', 'seller_name', 'seller_father_name', 'seller_address', 'purchaser_name', 'purchaser_father_name', 'purchaser_age', 'purchaser_address', 'previous_owner_name', 'date_of_previous_sale', 'purpose_of_sale', 'sale_consideration_amount', 'advance_payment_amount', 'cheque_number', 'date_of_advance_payment', 'balance_payment_amount', 'witness_1_name', 'witness_2_name']
 
+class BailPetitionForm(forms.ModelForm):
+    class Meta:
+        model = LegalDocument
+        fields = ['high_court_name', 'accused_name', 'fir_number', 'relevant_legal_sections', 'police_station_name']
+
+class DeedOfAdoptionForm(forms.ModelForm):
+    class Meta:
+        model = LegalDocument
+        fields = ['place_of_execution', 'date', 'adoptive_father_name', 'adoptive_father_address', 'natural_mother_name', 'natural_mother_address', 'child_name', 'biological_father_name', 'previous_marriage_date', 'child_birth_date', 'divorce_petition_number', 'divorce_court_name', 'divorce_order_date', 'date_of_adoption_ceremony', 'religious_ceremony_performed', 'witness_1_name', 'witness_2_name']
+
+class LeaveAndLicenseAgreementForm(forms.ModelForm):
+    class Meta:
+        model = LegalDocument
+        fields = ['place_of_execution', 'date', 'licensor_name', 'licensee_name', 'licensee_address', 'property_address', 'survey_number', 'number_of_floors_in_building', 'built_up_area', 'licensed_portion_of_the_building', 'area_for_use', 'purpose_of_use', 'license_duration', 'monthly_rent', 'rent_per_square_foot', 'rent_due_day', 'witness_1_name', 'witness_2_name']
+
+class PartnershipAgreementForm(forms.ModelForm):
+    class Meta:
+        model = LegalDocument
+        fields = ['place_of_execution', 'date', 'partner_1_name', 'partner_1_age', 'partner_1_father_name', 'partner_1_address', 'partner_2_name', 'partner_2_age', 'partner_2_father_name', 'partner_2_address', 'partner_3_name', 'partner_3_age', 'partner_3_father_name', 'partner_3_address', 'partner_4_name', 'partner_4_age', 'partner_4_father_name', 'partner_4_address', 'purpose_of_business', 'business_name', 'business_address', 'previous_partnership_deed_date', 'capital_investment_date', 'working_partner_1', 'working_partner_2', 'working_partner_3', 'remuneration_percentage_1', 'remuneration_percentage_2', 'remuneration_percentage_3', 'partner_1_share_of_profit', 'partner_2_share_of_profit', 'partner_3_share_of_profit', 'partner_4_share_of_profit', 'sleeping_partner_names', 'witness_1_name', 'witness_2_name']
+
+class DeedOfGiftOfImmoveablePropertyForm(forms.ModelForm):
+    class Meta:
+        model = LegalDocument
+        fields = ['place_of_execution', 'date', 'donor_name', 'donor_address', 'donee_name', 'donee_address', 'property_location', 'donor_relationship_to_donee', 'property_market_value', 'witness_1_name', 'witness_2_name']
+
+class MemorandumRecordingFamilySettlementForm(forms.ModelForm):
+    class Meta:
+        model = LegalDocument
+        fields = ['place_of_execution', 'date', 'party_1_name', 'party_1_address', 'party_2_name', 'party_2_address', 'party_3_name', 'party_3_address', 'relationship_between_party_1_and_party_2', 'dispute_subject', 'deceased_person_name', 'liabilities_amount', 'expenses_amount', 'bank_name', 'execution_date', 'witness_1_name', 'witness_2_name']
+
+class PartitionDeedForm(forms.ModelForm):
+    class Meta:
+        model = LegalDocument
+        fields = ['place_of_execution', 'date', 'first_party_name', 'first_party_father_name', 'first_party_address', 'second_party_name', 'second_party_father_name', 'second_party_address', 'third_party_name', 'third_party_father_name', 'third_party_address', 'karta_name', 'family_name', 'wife_name', 'other_member_name', 'phone_number_1', 'phone_number_2', 'shares_count_1', 'company_name_1', 'bank_balance_1', 'bank_name_1', 'branch_name_1', 'date_of_agreement', 'shares_value_1', 'company_name_2', 'shares_value_2', 'total_value', 'recipient_name', 'net_capital_of_family', 'bank_balance_2', 'donated_amount', 'charitable_trust_name', 'partition_date', 'allocated_phone_number', 'witness_1_name', 'witness_2_name']
+
+class SeparationAgreementForm(forms.ModelForm):
+    class Meta:
+        model = LegalDocument
+        fields = ['city', 'date', 'husband_name', 'husband_father_name', 'husband_residence_address', 'wife_name', 'maintenance_amount_from_husband', 'first_child_name', 'second_child_name', 'first_child_age', 'second_child_age', 'husband_visiting_time_start', 'husband_visiting_time_end', 'witness_1_name', 'witness_2_name']

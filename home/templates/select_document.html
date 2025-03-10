@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Select Document</title>
+    <title>Select Document Category</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,41 +12,34 @@
         h1 {
             color: #004080;
         }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        li {
-            margin: 10px 0;
-        }
-        a {
-            text-decoration: none;
+        .category {
             background-color: #004080;
             color: white;
-            padding: 10px 20px;
+            padding: 15px;
             border-radius: 5px;
-            display: inline-block;
+            cursor: pointer;
+            margin: 10px auto;
+            width: 50%;
+            text-align: center;
+            text-decoration: none;
+            display: block;
         }
-        a:hover {
+        .category:hover {
             background-color: #002a5c;
         }
     </style>
 </head>
 <body>
-    <h1>Select a Legal Document to Generate</h1>
-    <ul>
-        <li><a href="/will/">Simple Will</a></li>
-        <li><a href="/license/">License Agreement</a></li>
-        <li><a href="/loan_agreement/">Loan Agreement</a></li>
-        <li><a href="/deed_of_hypothecation/">Deed of Hypothecation</a></li>
-        <li><a href="/bail_bond/">Bail Bond</a></li>
-        <li><a href="/contract_bond/">Contract Bond</a></li>
-        <li><a href="/simple_money_bond/">Simple Money Bond</a></li>
-        <li><a href="/employee_bond_for_non_compete/">Employee Bond For Non-Compete</a></li>
-        <li><a href="/simple_mortgage_deed/">Simple Mortgage Deed</a></li>
-        <li><a href="/rent_agreement/">Rent Agreement (for a term of years)</a></li>
-        <li><a href="/sale_agreement/">Agreement For Sale</a></li>
-        
-    </ul>
+    <h1>Select a Legal Document Category</h1>
+
+    <a class="category" href="/categories/will/">Will</a>
+    <a class="category" href="/categories/banking/">Banking</a>
+    <a class="category" href="/categories/bonds/">Bonds</a>
+    <a class="category" href="/categories/contracts/">Contracts</a>
+    <a class="category" href="/categories/corporate/">Corporate/Business</a>
+    <a class="category" href="/categories/criminal/">Criminal</a>
+    <a class="category" href="/categories/divorceandfamilylaw/">Divorce, Family Law</a>
+    <a class="category" href="/categories/trademarkandcopyright/">Trademark and Copyright</a>
+
 </body>
 </html>
